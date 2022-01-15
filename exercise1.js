@@ -26,11 +26,11 @@ const convert = (function () {
 
     // convert mg to kilograms
     function mgToKg(mg) {
-        return mgToGrams / 1000
+        return mgToGrams(mg) / 1000
     }
 
     return { gramsToKg, gramsToMg, kgToGrams, kgToMg, mgToGrams, mgToKg }
 })()
 
 let mgs = convert.gramsToMg(42);
-console.log(mgs)
+console.log(convert.mgToKg(1000))
