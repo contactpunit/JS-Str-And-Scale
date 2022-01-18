@@ -7,7 +7,6 @@ const Convert = (function () {
             throw Error(`${settings.units} should have allowed values mg, kg and grams`)
         }
         this.weight = this.weightToMg(weight, settings.units)
-        console.log(this.weight)
     }
 
     Constructor.prototype.weightToMg = function (m, unit) {
