@@ -1,15 +1,12 @@
 // convert date utility to constructor pattern
 
 class Time {
-    constructor(...d) {
-        if (d.length === 1) {
-            this.date = new Date(d[0])
-        }
-        else if (d.length > 1) {
-            this.date = new Date(d.join(','))
+    constructor(date = []) {
+        if (Array.isArray(date)) {
+            this.date = new Date(...date)
         }
         else {
-            throw new Error('Not a valid date')
+            this.date = new Date([date])
         }
         this.days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
         this.months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
